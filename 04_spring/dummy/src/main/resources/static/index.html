@@ -1,0 +1,40 @@
+<head></head>
+<body>
+<div id="time-text"></div><br>
+<div id="time-year"></div><br>
+<div id="time-month"></div><br>
+<div id="time-day"></div><br>
+<div id="time-hour"></div><br>
+<div id="time-minute"></div><br>
+<div id="time-second"></div><br>
+
+<script type="module">
+    async function getTimeAsText() {
+        const response = await fetch("/time");
+        const timeText = await response.text();
+        const textElement = document.getElementById("time-text");
+        textElement.innerHTML = "<b>" + timeText + "</b>";
+    }
+    setInterval(getTimeAsText, 200);
+
+    async function getTimeAsJson() {
+        const response = await fetch("/time-json");
+        const timeJson = await response.json();
+        const timeYearElement = document.getElementById("time-year");
+        const timeMonthElement = document.getElementById("time-month");
+        const timeDayElement = document.getElementById("time-day");
+        const timeHourElement = document.getElementById("time-hour");
+        const timeMinuteElement = document.getElementById("time-minute");
+        const timeSecondElement = document.getElementById("time-second");
+        timeYearElement.innerText = timeJson.year;
+        timeMonthElement.innerText = timeJson.month;
+        timeDayElement.innerText = timeJson.day;
+        timeHourElement.innerText = timeJson.hour;
+        timeMinuteElement.innerText = timeJson.minute;
+        timeSecondElement.innerText = timeJson.second;
+    }
+    setInterval(getTimeAsJson, 200);
+
+</script>
+
+</body>

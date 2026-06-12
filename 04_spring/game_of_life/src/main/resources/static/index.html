@@ -1,0 +1,40 @@
+<head></head>
+<body>
+    <div id="time">
+        <h1>---</h1>
+    </div>
+    <br>
+    <br>
+    <div id="game">
+        <pre>---</pre>
+    </div>
+    <br>
+    <div id="counter">
+        <pre>---</pre>
+    </div>
+<script type="module">
+    async function updateTime() {
+        const response = await fetch('/time');
+        const innerText = await response.text();
+        document.getElementById('time').innerHTML = "<H1>" + innerText + "</H1>";
+    }
+    setInterval(updateTime, 200);
+    updateTime();
+
+    let game = await (await fetch('/init')).json();
+
+    async function renderGame() {
+        var rowsText = ""
+        for(const row of game.rows) {
+            rowsText += row + "\n";
+        };
+        document.getElementById('game').innerHTML = "<pre>" + rowsText + "</pre>";
+        document.getElementById('counter').innerHTML = "<pre>" + game.counter + "</pre>";
+        game = await (await fetch('/cycle',
+            { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(game) }
+        )).json();
+    }
+    setInterval(renderGame, 250);
+    renderGame();
+</script>
+</body>
