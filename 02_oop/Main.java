@@ -25,9 +25,9 @@ class GameOfLife {
         populateBoard(new CoordRow(5),new CoordCol(2));
         populateBoard(new CoordRow(8),new CoordCol(14));
         while(true) {
-	    drawBoard(counter);
+	        drawBoard(counter);
             board.cycle();
-	    counter.inc();
+	        counter.inc();
             Thread.sleep(250);
         }
     }
