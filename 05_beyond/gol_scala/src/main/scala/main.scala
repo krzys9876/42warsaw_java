@@ -42,8 +42,8 @@ case class Cell(value: Boolean, neighbours: Neighbours, row: Coord[Row], col: Co
   def nextGeneration: Cell =
     (value, neighbours) match {
       case (true, Neighbours(n)) if n < 2 => reset // rule 1
-      case (true, Neighbours(n)) if n == 2 || n == 3 => this // rule 2
-      case (true, Neighbours(n)) if n > 3 => reset // rule 3
+      case (true, Neighbours(n)) if n == 2 || n == 3 => this // rule 2 - redundant
+      case (true, Neighbours(n)) if n > 3 => reset // rule 3 - could be combined with rule 1
       case (false, Neighbours(n)) if n == 3 => set // rule 4
       case _ => this
     }
