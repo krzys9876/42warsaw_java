@@ -18,7 +18,7 @@ The main Java selling-point that is still valid after 30+ years. Plus backwards 
 
 ## Java as simple C
 
-Discover Java as yet another programming language, somewhat similar to C with wothout memory management burden
+Discover Java as yet another programming language, somewhat similar to C with wothout memory management burden.
 
 ## Object Oriented Programming
 
@@ -26,19 +26,19 @@ Java is primarily an OOP language. Model the reality using classes, fields and m
 
 ## Type-level programming
 
-Dive deeper into OOP by modelling the program and data flow by using types.
+Dive deeper into OOP by modelling the program and data flow by using types. Let types guide the program execution. Often combined with functional programming.
 
 ## Functional Programming
 
-If you like math this is for you - a program as a set of _pure_ functions that transform input to output.
+If you like math this is for you - a program as a set of _pure_ functions that transform input to output. Embrace immutability that helps in reasoning about the code.
 
 ## Backend
 
-Java is a king (or queen...) of backend. By using SpringBoot you are able to provide services to any distributed application you may think.
+Java is a king (or queen...) of backend. By using SpringBoot you are able to provide services to any distributed application you may think. Try not to lose yourself in a sea of libraries.
 
 ## Test-Driven Development
 
-Although not specific to Java, it is worth knowing it exists and how useful it may be.
+Although not specific to Java, it is worth knowing it exists and how useful it may be. At first counterintuitive, when done right it may become your primary way of writing complex programs.
 
 ## Beyond Java
 
